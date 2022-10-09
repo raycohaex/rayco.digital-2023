@@ -1,0 +1,96 @@
+html, body {
+    font-family: $mori;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $radiogrotesk;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-logo {
+    all: unset;
+    cursor: pointer;
+    svg {
+        width: 90px;
+        height: auto;
+    }
+}
+
+.site-top-menu {
+    padding: 30px 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav {
+        a {
+            all: unset;
+            cursor: pointer;
+            padding: 10px 10px;
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .socials {
+        margin-left: 16px;
+        padding-left: 22px;
+        border-left: 1px solid rgba($white, 0.2);
+        a {
+            all: unset;
+            cursor: pointer;
+            padding: 0 2px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+            svg {
+                width: 20px;
+                fill: rgba($white, 0.5);
+                transition: 150ms fill;
+                &:hover {
+                    fill: rgba($white, 1);
+                }
+            }
+        }
+    }
+}
+
+.site-wrapper {
+    z-index: 2;
+    position: relative;
+}
+.grain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: 300px;
+    opacity: 0.1;
+    animation: noise 300ms infinite;
+}
+
+@keyframes noise {
+    0%   {background-position: -5px 0px}
+    10%   {background-position: 10px -5px}
+    20%   {background-position: 0px 5px}
+    30%   {background-position: 10px -10px}
+    40%   {background-position: -5px 5px}
+    50%   {background-position: 10px -5px}
+    60%   {background-position: -5px 5px}
+    70%   {background-position: 5px 0px}
+    80%   {background-position: -5px 10px}
+    90%   {background-position: 0px 0px}
+    100%   {background-position: 0px -5px}
+  }

@@ -1,7 +1,13 @@
 {{ define "main" }}
-
+    <div class="site-wrapper">
     <!-- header -->
-    {{- partial "header.html" -}}
+    {{- partial "header.html" . -}}
     <!-- /header -->
+
+    </div>
+
+    {{ $noise := resources.Get "img/noise.jpg" }}
+    {{ $noise := $noise.Fit "600x400" }}
+    <div class="grain" style="background:url('{{$noise.RelPermalink}}')"></div>
 
 {{ end }}
