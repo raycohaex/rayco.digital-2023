@@ -45,6 +45,15 @@
 
 }
 
+#intro-wrapper {
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #intro-title {
+        font-size: 5.5em;
+    }
+}
 
 .grain {
     width: 100%;
@@ -70,4 +79,15 @@
     80%   {background-position: -5px 10px}
     90%   {background-position: 0px 0px}
     100%   {background-position: 0px -5px}
+  }
+
+
+
+
+  #test {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    background-size: 620px;
+    background-position: -110px -50px;
   }
