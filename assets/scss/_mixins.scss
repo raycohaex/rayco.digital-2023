@@ -1,0 +1,7 @@
+@mixin gradient($color: rgb(242,27,85)) {
+    background: $color;
+    background: -moz-radial-gradient(circle, $color 0%, $color 22%, rgba(242,27,85,0) 70%, rgba(242,27,85,0) 100%);
+    background: -webkit-radial-gradient(circle, $color 0%, $color 22%, rgba(242,27,85,0) 70%, rgba(242,27,85,0) 100%);
+    background: radial-gradient(circle, $color 0%, $color 22%, rgba(242,27,85,0) 70%, rgba(242,27,85,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f21b55",endColorstr="#f21b55",GradientType=1);
+}

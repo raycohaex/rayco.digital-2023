@@ -2,3 +2,72 @@
     background: $dark;
     color: $white;
 }
+
+.gradients {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+
+    .gradient {
+        width: 1400px;
+        height: 1400px;
+        opacity: 0.06;
+        position: absolute;
+
+        &.purple {
+            @include gradient(rgb(242,27,85))
+        }
+        &.blue {
+            @include gradient(rgb(27, 145, 242))
+        }
+    }
+
+
+    #gradient-1 {
+        left: -400px;
+        top: 200px;
+    }
+    #gradient-2 {
+        right: -500px;
+        top: 300px;
+    }
+    #gradient-3 {
+        right: -300px;
+        top: -300px;
+    }
+    #gradient-4 {
+        right: -100px;
+        top: -900px;
+    }
+
+}
+
+
+.grain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: 70%;
+    opacity: 0.08;
+    mix-blend-mode: color-dodge;
+    animation: noise 300ms infinite;
+}
+
+@keyframes noise {
+    0%   {background-position: -5px 0px}
+    10%   {background-position: 10px -5px}
+    20%   {background-position: 0px 5px}
+    30%   {background-position: 10px -10px}
+    40%   {background-position: -5px 5px}
+    50%   {background-position: 10px -5px}
+    60%   {background-position: -5px 5px}
+    70%   {background-position: 5px 0px}
+    80%   {background-position: -5px 10px}
+    90%   {background-position: 0px 0px}
+    100%   {background-position: 0px -5px}
+  }

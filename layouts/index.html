@@ -1,13 +1,26 @@
 {{ define "main" }}
     <div class="site-wrapper">
     <!-- header -->
-    {{- partial "header.html" . -}}
+        {{- partial "header.html" . -}}
     <!-- /header -->
+    <!-- main -->
+        <main>
+            <div class="container">
+                {{- partial "home/landingsection.html" . -}}
+            </div>
+        </main>
+    <!-- /main -->
+    </div>
 
+    <div class="gradients">
+        <div class="gradient purple" id="gradient-1"></div>
+        <div class="gradient purple" id="gradient-2"></div>
+        <div class="gradient purple" id="gradient-3"></div>
+        <div class="gradient blue" id="gradient-4"></div>
     </div>
 
     {{ $noise := resources.Get "img/noise.jpg" }}
     {{ $noise := $noise.Fit "600x400" }}
-    <div class="grain" style="background:url('{{$noise.RelPermalink}}')"></div>
+    <div class="grain" style="background-image:url('{{$noise.RelPermalink}}')"></div>
 
 {{ end }}
