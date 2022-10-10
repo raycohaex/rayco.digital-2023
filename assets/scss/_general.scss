@@ -5,3 +5,16 @@
 .align-center {
     align-items: center;
 }
+
+
+.card {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30rem;
+	height: 40rem;
+	font-size: 9.5rem;
+	padding: 2rem;
+	background-color: #000e4a;
+	background-color: #e8f3ff;
+}
