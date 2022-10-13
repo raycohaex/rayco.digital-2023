@@ -9,24 +9,6 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
 <body {{ if $.IsNode }} class="homepage" {{ end }}>
-    <canvas
-    data-test
-    id="c"
-    data-gradient="wrapper"
-    data-multx="2"
-    data-multy="2"
-    data-hue="180"
-    data-brightness=".8"
-    data-mouse="-1"
-    data-scale="1"
-    data-noise="1.5"
-    data-time=".2"
-    data-bw=".0"
-    data-red="0.00"
-    data-green="0.33"
-    data-blue="0.88"
-  ></canvas>
-  
     {{ block "main" .}}
 
     {{ end }}
@@ -37,6 +19,5 @@
 {{ $homepage := resources.Get "js/homepage.js" | resources.Minify | resources.Fingerprint }}
 {{ $js := slice $homepage | resources.Concat "js/bundle.js" }}
 <script src="{{$js.Permalink}}"></script>
-<script src="/webgl-gen.js?v=23532"></script>
 </body>
 </html>
