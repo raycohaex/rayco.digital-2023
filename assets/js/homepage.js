@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     function updateHolographicBackground(valueX, valueY) {
         const percentage = "calc("+valueX * 6+"% + 500px)"+valueY * 12+"%" ;
-        console.log(percentage);
+        //console.log(percentage);
         holographicElement.style.backgroundPosition = percentage;
       }
       
