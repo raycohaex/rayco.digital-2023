@@ -232,7 +232,7 @@
     align-items: center;
     .expanding-background {
         position: absolute;
-        width: calc(100% - 120px);
+        width: calc(1400px + 220px);
         height: calc(100% - 120px);
         border-radius: 30px;
         background: $light;

@@ -32,11 +32,11 @@ ScrollTrigger.addEventListener("refresh", asscroll.resize);
 window.addEventListener("load", () => {
   const totalScroll = asscroll.containerElement.scrollHeight - innerHeight;
 
-  let test = document.getElementById('section-intro').getBoundingClientRect();
+  let sectionintro = document.getElementById('section-intro').getBoundingClientRect();
 
   var tl = gsap.timeline({
         scrollTrigger: {    
-            start: test.bottom - 300,
+            start: sectionintro.bottom - 200,
             scrub: 1,
         },
         defaults: {
@@ -48,17 +48,6 @@ window.addEventListener("load", () => {
         height: '100%',
         borderRadius: 0
     }, 0)
-
-//   gsap.to(".expanding-background", {
-//     scrollTrigger: {
-//         pinType: isTouch ? 'fixed' : 'transform',
-//         trigger: "#section-work",
-//         scrub: true,
-//     },
-//     width: window.innerWidth,
-//     ease: "sine.out",
-//   }, 0)
-
 
   asscroll.enable();
 });
