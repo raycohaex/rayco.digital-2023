@@ -2,25 +2,31 @@
     <main>
         <div asscroll-container class="z-index-max">
             <div>
-            <section class="site-wrapper" id="section-intro">
-            <!-- header -->
-                {{- partial "header.html" . -}}
-            <!-- /header -->
-            <!-- main -->
-                <div class="container">
-                    {{- partial "home/landingsection.html" . -}}
+                <section class="section-wrapper" id="section-intro">
+                <!-- header -->
+                    {{- partial "header.html" . -}}
+                <!-- /header -->
+                <!-- main -->
+                    <div class="container">
+                        {{- partial "home/landingsection.html" . -}}
+                    </div>
+                <!-- /main -->
+                </section>
+
+
+                <section class="section-wrapper" id="section-work">
+                    {{- partial "home/worksection.html" . -}}
+                    <div class="expanding-background">
+                    </div>
+                </section>
+
+
+                <div class="gradients">
+                    <div class="gradient purple" id="gradient-1"></div>
+                    <div class="gradient purple" id="gradient-2"></div>
+                    <div class="gradient purple" id="gradient-3"></div>
+                    <div class="gradient blue" id="gradient-4"></div>
                 </div>
-            <!-- /main -->
-            </section>
-            <section class="site-wrapper" id="section-intro">
-                ...........
-            </section>
-            <div class="gradients">
-                <div class="gradient purple" id="gradient-1"></div>
-                <div class="gradient purple" id="gradient-2"></div>
-                <div class="gradient purple" id="gradient-3"></div>
-                <div class="gradient blue" id="gradient-4"></div>
-            </div>
             </div>
         </div>
 

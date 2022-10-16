@@ -32,28 +32,32 @@ ScrollTrigger.addEventListener("refresh", asscroll.resize);
 window.addEventListener("load", () => {
   const totalScroll = asscroll.containerElement.scrollHeight - innerHeight;
 
-  gsap.to(".peach", {
-    scrollTrigger: {
-      pin: true,
-      pinType: isTouch ? 'fixed' : 'transform',
-      end: '200%',
-      scrub: 0.2,
-      trigger: ".peaches" },
+  let test = document.getElementById('section-intro').getBoundingClientRect();
 
-    y: (i, target) => -totalScroll * target.dataset.speed,
-    ease: "none" });
+  var tl = gsap.timeline({
+        scrollTrigger: {    
+            start: test.bottom - 300,
+            scrub: 1,
+        },
+        defaults: {
+        duration: 1
+        }
+    })
+    .to('.expanding-background', {
+        width: window.innerWidth,
+        height: '100%',
+        borderRadius: 0
+    }, 0)
 
-
-  gsap.from(".gif img", {
-    scrollTrigger: {
-      pin: true,
-      pinType: isTouch ? 'fixed' : 'transform',
-      scrub: true,
-      trigger: ".gif" },
-
-    scale: 0.2,
-    autoAlpha: 0,
-    ease: "sine.out" });
+//   gsap.to(".expanding-background", {
+//     scrollTrigger: {
+//         pinType: isTouch ? 'fixed' : 'transform',
+//         trigger: "#section-work",
+//         scrub: true,
+//     },
+//     width: window.innerWidth,
+//     ease: "sine.out",
+//   }, 0)
 
 
   asscroll.enable();

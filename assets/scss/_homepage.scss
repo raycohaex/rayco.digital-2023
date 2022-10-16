@@ -5,6 +5,12 @@
     color: $white;
 }
 
+.magnetic {
+    transition: all .3s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
 /* ===BACKGROUND=== */
 
 .gradients {
@@ -217,8 +223,18 @@
     }
   }
 
-.magnetic {
-    transition: all .3s ease;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-}
+  #section-work {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    .expanding-background {
+        position: absolute;
+        width: calc(100% - 120px);
+        height: calc(100% - 120px);
+        border-radius: 30px;
+        background: $light;
+    }
+  }
