@@ -1,13 +1,44 @@
 {{ $holographic := resources.Get "img/holographic.webp" }}
 
-<div id="intro-wrapper">
-    <h1 id="intro-title">I build scalable high<br>
-    performance websites,<br>
-    APIs and web-<br> 
-    applications
+<div class="grid grid__3-2">
+    <h1 id="intro-title">
+        I build scalable APIs, 
+        Web-applications & web3
+        solutions
     </h1>
 
-    <div class="skills">
-        <div class="card" id="test" style="background-image:url('{{$holographic.RelPermalink}}')"></div>
+    <div id="skills-wrapper">
+        <div class="skill-wrapper">
+            <div class="skill-logo">
+                <svg class="skill-logo__image" width="100%" height="100%" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <g transform="matrix(1,0,0,1,256,256)">
+                        <g id="PHP-logo.svg" transform="matrix(1,0,0,1,-355.601,-191.799)">
+                            <g id="g3476" transform="matrix(1.25,0,0,-1.25,-4.4,394.299)">
+                                <g id="g3478">
+                                    <g id="g3484" transform="matrix(1,0,0,1,161.734,145.307)">
+                                        <path id="path3486" d="M0,0C12.065,0 21.072,2.225 26.771,6.611C32.409,10.952 36.303,18.473 38.344,28.964C40.247,38.77 39.522,45.617 36.19,49.312C32.783,53.086 25.417,55 14.297,55L-4.984,55L-15.673,0L0,0ZM-63.063,-67.75C-63.958,-67.75 -64.808,-67.35 -65.377,-66.658C-65.947,-65.967 -66.178,-65.057 -66.007,-64.178L-37.679,81.573C-37.405,82.982 -36.17,84 -34.734,84L26.32,84C45.508,84 59.79,78.79 68.767,68.513C77.792,58.182 80.579,43.741 77.05,25.592C75.614,18.198 73.144,11.331 69.709,5.183C66.27,-0.972 61.725,-6.667 56.198,-11.747C49.582,-17.939 42.094,-22.429 33.962,-25.071C25.959,-27.678 15.681,-29 3.414,-29L-21.308,-29L-28.368,-65.322C-28.642,-66.732 -29.876,-67.75 -31.312,-67.75L-63.063,-67.75Z" style="fill-rule:nonzero;"/>
+                                    </g>
+                                    <g id="g3492" transform="matrix(1,0,0,1,311.583,116.307)">
+                                        <path id="path3494" d="M0,0C-0.896,0 -1.745,0.4 -2.314,1.092C-2.885,1.783 -3.116,2.692 -2.945,3.572L9.586,68.061C10.778,74.194 10.484,78.596 8.759,80.456C7.703,81.593 4.531,83.5 -4.848,83.5L-27.55,83.5L-43.305,2.428C-43.579,1.018 -44.814,0 -46.25,0L-77.75,0C-78.646,0 -79.495,0.4 -80.065,1.092C-80.635,1.783 -80.866,2.693 -80.695,3.572L-52.367,149.323C-52.093,150.732 -50.858,151.75 -49.422,151.75L-17.922,151.75C-17.026,151.75 -16.177,151.35 -15.607,150.659C-15.037,149.967 -14.806,149.058 -14.977,148.178L-21.813,113L2.609,113C21.214,113 33.83,109.72 41.178,102.972C48.668,96.088 51.005,85.081 48.125,70.253L34.945,2.428C34.671,1.018 33.437,0 32,0L0,0Z" style="fill-rule:nonzero;"/>
+                                    </g>
+                                    <g id="g3500" transform="matrix(1,0,0,1,409.55,145.307)">
+                                        <path id="path3502" d="M0,0C12.065,0 21.072,2.225 26.771,6.611C32.409,10.951 36.303,18.472 38.345,28.964C40.248,38.77 39.523,45.617 36.19,49.312C32.783,53.086 25.417,55 14.297,55L-4.984,55L-15.673,0L0,0ZM-63.062,-67.75C-63.957,-67.75 -64.807,-67.35 -65.376,-66.658C-65.946,-65.967 -66.178,-65.057 -66.007,-64.178L-37.679,81.573C-37.404,82.982 -36.17,84 -34.733,84L26.32,84C45.509,84 59.79,78.79 68.768,68.513C77.793,58.183 80.579,43.742 77.051,25.592C75.613,18.198 73.144,11.331 69.709,5.183C66.27,-0.972 61.725,-6.667 56.198,-11.747C49.582,-17.939 42.094,-22.429 33.962,-25.071C25.959,-27.678 15.681,-29 3.414,-29L-21.309,-29L-28.366,-65.322C-28.641,-66.732 -29.875,-67.75 -31.312,-67.75L-63.062,-67.75Z" style="fill-rule:nonzero;"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="PHP-logo.svg1" serif:id="PHP-logo.svg">
+                        </g>
+                    </g>
+                </svg>                
+            </div>
+            <div class="skill skill__large" id="skill-php" data-staticx="200" data-skill="PHP" style="background-image:url('{{$holographic.RelPermalink}}')"></div>
+        </div>
+        <div class="skill-wrapper">
+            <div class="skill skill__large" id="skill-js" data-staticx="350" data-skill="JavaScript" style="background-image:url('{{$holographic.RelPermalink}}')"></div>
+        </div>
+        <div class="skill-wrapper">
+            <div class="skill skill__large" id="skill-dotnet" data-staticx="-150" data-skill="ASP.NET Core" style="background-image:url('{{$holographic.RelPermalink}}')"></div>
+        </div>
     </div>
 </div>

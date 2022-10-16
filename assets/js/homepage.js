@@ -1,42 +1,39 @@
+const THROTTLE_MIN = 30;//ms
+
 window.addEventListener('DOMContentLoaded', (event) => {
     
-    //const holographicElements = document.querySelectorAll('[data-holographic]');
-    const holographicElement = document.getElementById("test");
-    const mousetrigger = document.getElementById('test2');
+    const holographicElements = document.querySelectorAll('[data-skill]');
+    const mousetrigger = document.getElementById('section-intro');
 
+    let enableCall = true;
     mousetrigger.addEventListener('mousemove', (event) => {
-        handleMouseMove(event);
+      if (!enableCall) return;
+
+      enableCall = false;
+      handleMouseMove(event);
+      setTimeout(() => enableCall = true, THROTTLE_MIN);
     });
 
-    function updateHolographicBackground(valueX, valueY) {
-        const percentage = "calc("+valueX * 6+"% + 500px)"+valueY * 12+"%" ;
-        //console.log(percentage);
-        holographicElement.style.backgroundPosition = percentage;
+    updateHolographicBackground = (valueX, valueY) => {
+        holographicElements.forEach( e => {
+          e.style.backgroundPosition = "calc("+valueX * 9+"% + " + e.dataset.staticx +"px) "+valueY * 12+"%";
+        });
       }
       
-      function handleMouseMove(event) {
-        const x = event.clientX;
-        const y = event.clientY;
-        const width = document.documentElement.clientWidth;
-        const height = document.documentElement.clientHeight;
-        const valueX = x / width;
-        const valueY = y / height;
+        handleMouseMove = event => {
+        const valueX = event.clientX / document.documentElement.clientWidth;
+        const valueY = event.clientY / document.documentElement.clientHeight;
+
         updateHolographicBackground(valueX, valueY);
-          var halfW = ( document.documentElement.clientWidth / 2 );
-          var halfH = ( document.documentElement.clientHeight / 2 );
-          var coorX = ( halfW - ( event.pageX - document.documentElement.offsetLeft ) );
-          var coorY = ( halfH - ( event.pageY - document.documentElement.offsetTop ) );
-          var degX  = ( ( coorY / halfH ) * 5 ) + 'deg';
-          var degY  = ( ( coorX / halfW ) * -5 ) + 'deg'; 
+        var halfW = ( document.documentElement.clientWidth / 2 );
+        var halfH = ( document.documentElement.clientHeight / 2 );
+        var coorX = ( halfW - ( event.pageX - document.documentElement.offsetLeft ) );
+        var coorY = ( halfH - ( event.pageY - document.documentElement.offsetTop ) );
+        var degX  = ( ( coorY / halfH ) * 5 ) + 'deg';
+        var degY  = ( ( coorX / halfW ) * -5 ) + 'deg'; 
           
-              document.querySelector('.card').style.transform = "perspective( 600px ) translate3d( 0, -7px, 0 ) scale(1) rotateX("+ degX +") rotateY("+ degY +")";
+        holographicElements.forEach( e => {
+          e.style.transform = "perspective( 600px ) translate3d( 0, 0, 0 ) scale(1) rotateX("+ degX +") rotateY("+ degY +")";
+        });
       };
-
-      function handleDeviceOrientation(event) {
-        const z = Math.abs(event.alpha); // rotation degrees from 0 to 360
-        const value = z / 360;
-        updateHolographicBackground(value);
-      }
-
-    window.addEventListener("deviceorientation", handleDeviceOrientation, true);
 });

@@ -1,7 +1,11 @@
+/* ===GLOBAL=== */
+
 .homepage {
     background: $dark;
     color: $white;
 }
+
+/* ===BACKGROUND=== */
 
 .gradients {
     width: 100%;
@@ -45,14 +49,8 @@
 
 }
 
-#intro-wrapper {
-    margin-top: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    #intro-title {
-        font-size: 5.5em;
-    }
+#intro-title {
+    font-size: 5.5em;
 }
 
 .grain {
@@ -81,13 +79,55 @@
     100%   {background-position: 0px -5px}
   }
 
+/* ===SKILLS=== */
 
+#skills-wrapper {
+    padding: 20px;
+    min-height: 600px;
+    display: flex;
+    .skill-wrapper {
+        position: relative;
+        .skill {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 30rem;
+            height: 40rem;
+            font-size: 9.5rem;
+            background-color: #000e4a;
+            background-color: #e8f3ff;
+            &.skill__large {
+                width: 120px;
+                height: 120px;
+                border-radius: 20px;
+                background-size: 620px;
+                background-position: -110px -50px;
+            }
+        }
+        .skill-logo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            .skill-logo__image {
+                width: 100%;
+                height: 100%;
+                padding: 15px;
+            }
+        }
+    }
 
+    #skill-php {
 
-  #test {
-    width: 140px;
-    height: 140px;
-    border-radius: 20px;
-    background-size: 620px;
-    background-position: -110px -50px;
+    }
+}
+
+/* ===SECTIONS=== */
+
+  #section-intro {
+    min-height: 100vh;
+    header {
+        margin-bottom: 100px;
+    }
   }

@@ -1,16 +1,14 @@
 {{ define "main" }}
-    <div class="site-wrapper" id="test2">
+    <section class="site-wrapper" id="section-intro">
     <!-- header -->
         {{- partial "header.html" . -}}
     <!-- /header -->
     <!-- main -->
-        <main>
-            <div class="container">
-                {{- partial "home/landingsection.html" . -}}
-            </div>
-        </main>
+        <div class="container">
+            {{- partial "home/landingsection.html" . -}}
+        </div>
     <!-- /main -->
-    </div>
+    </section>
 
     <div class="gradients">
         <div class="gradient purple" id="gradient-1"></div>

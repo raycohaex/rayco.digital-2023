@@ -1,6 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     font-family: $mori;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     all: unset;
     cursor: pointer;
     svg {
-        width: 90px;
+        width: 82px;
         height: auto;
     }
 }

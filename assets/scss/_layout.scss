@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    &.grid__2-1 {
+        grid-template-columns: 66.6% auto;
+    }
+    &.grid__3-2 {
+        grid-template-columns: 60% auto;
+    }
+}
