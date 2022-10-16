@@ -5,3 +5,20 @@
 .align-center {
     align-items: center;
 }
+
+.btn {
+	all: unset;
+	display: inline-block;
+	cursor: pointer;
+	padding: 18px 22px 14px;
+	border-radius: 8px;
+	&.btn-white {
+		background: $light;
+		color: $dark;
+	}
+	&.btn-glass {
+		background: rgba($light, 0.13);
+		color: $light;
+		border: 1px solid rgba($light, 0.20);
+	}
+}

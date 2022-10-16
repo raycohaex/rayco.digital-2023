@@ -1,24 +1,25 @@
 {{ define "main" }}
-    <section class="site-wrapper" id="section-intro">
-    <!-- header -->
-        {{- partial "header.html" . -}}
-    <!-- /header -->
-    <!-- main -->
-        <div class="container">
-            {{- partial "home/landingsection.html" . -}}
+    <main>
+        <section class="site-wrapper" id="section-intro">
+        <!-- header -->
+            {{- partial "header.html" . -}}
+        <!-- /header -->
+        <!-- main -->
+            <div class="container">
+                {{- partial "home/landingsection.html" . -}}
+            </div>
+        <!-- /main -->
+        </section>
+
+        <div class="gradients">
+            <div class="gradient purple" id="gradient-1"></div>
+            <div class="gradient purple" id="gradient-2"></div>
+            <div class="gradient purple" id="gradient-3"></div>
+            <div class="gradient blue" id="gradient-4"></div>
         </div>
-    <!-- /main -->
-    </section>
 
-    <div class="gradients">
-        <div class="gradient purple" id="gradient-1"></div>
-        <div class="gradient purple" id="gradient-2"></div>
-        <div class="gradient purple" id="gradient-3"></div>
-        <div class="gradient blue" id="gradient-4"></div>
-    </div>
-
-    {{ $noise := resources.Get "img/noise.jpg" }}
-    {{ $noise := $noise.Fit "600x400" }}
-    <div class="grain" style="background-image:url('{{$noise.RelPermalink}}')"></div>
-
+        {{ $noise := resources.Get "img/noise.jpg" }}
+        {{ $noise := $noise.Fit "600x400" }}
+        <div class="grain" style="background-image:url('{{$noise.RelPermalink}}')"></div>
+    </main>
 {{ end }}

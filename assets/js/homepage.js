@@ -1,25 +1,25 @@
-const THROTTLE_MIN = 30;//ms
-
-window.addEventListener('DOMContentLoaded', (event) => {
+export default holographictiles = () => {
     
+    const THROTTLE_MIN = 30;//ms
+        
     const holographicElements = document.querySelectorAll('[data-skill]');
     const mousetrigger = document.getElementById('section-intro');
 
     let enableCall = true;
     mousetrigger.addEventListener('mousemove', (event) => {
-      if (!enableCall) return;
+    if (!enableCall) return;
 
-      enableCall = false;
-      handleMouseMove(event);
-      setTimeout(() => enableCall = true, THROTTLE_MIN);
+    enableCall = false;
+    handleMouseMove(event);
+    setTimeout(() => enableCall = true, THROTTLE_MIN);
     });
 
     updateHolographicBackground = (valueX, valueY) => {
         holographicElements.forEach( e => {
-          e.style.backgroundPosition = "calc("+valueX * 9+"% + " + e.dataset.staticx +"px) "+valueY * 12+"%";
+        e.style.backgroundPosition = "calc("+valueX * 9+"% + " + e.dataset.staticx +"px) "+valueY * 12+"%";
         });
-      }
-      
+    }
+    
         handleMouseMove = event => {
         const valueX = event.clientX / document.documentElement.clientWidth;
         const valueY = event.clientY / document.documentElement.clientHeight;
@@ -31,9 +31,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var coorY = ( halfH - ( event.pageY - document.documentElement.offsetTop ) );
         var degX  = ( ( coorY / halfH ) * 5 ) + 'deg';
         var degY  = ( ( coorX / halfW ) * -5 ) + 'deg'; 
-          
+        
         holographicElements.forEach( e => {
-          e.style.transform = "perspective( 600px ) translate3d( 0, 0, 0 ) scale(1) rotateX("+ degX +") rotateY("+ degY +")";
+        e.style.transform = "perspective( 600px ) translate3d( 0, 0, 0 ) scale(1) rotateX("+ degX +") rotateY("+ degY +")";
         });
-      };
-});
+    };
+};

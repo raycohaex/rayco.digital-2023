@@ -16,13 +16,13 @@
     overflow: hidden;
 
     .gradient {
-        width: 1400px;
-        height: 1400px;
-        opacity: 0.06;
+        width: 1700px;
+        height: 1700px;
+        opacity: 0.09;
         position: absolute;
 
         &.purple {
-            @include gradient(rgb(242,27,85))
+            @include gradient(rgb(242, 27, 56))
         }
         &.blue {
             @include gradient(rgb(27, 145, 242))
@@ -49,8 +49,31 @@
 
 }
 
-#intro-title {
-    font-size: 5.5em;
+#intro-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    #intro-title {
+        font-size: 5.2em;
+        line-height: 1.1em;
+    }
+    
+    #intro-description {
+        color: #C2C2C2;
+        line-height: 1.85em;
+        margin-top: 36px;
+        display: block;
+        font-size: 14px;
+    }
+    
+    #intro-buttons {
+        margin-top: 15px;
+        .btn:not(:first-child) {
+            margin-left: 15px;
+        }
+    }
 }
 
 .grain {
@@ -60,8 +83,8 @@
     left: 0;
     top: 0;
     background-size: 70%;
-    opacity: 0.08;
-    mix-blend-mode: color-dodge;
+    opacity: 0.05;
+    mix-blend-mode: lighten;
     animation: noise 300ms infinite;
 }
 
@@ -82,11 +105,13 @@
 /* ===SKILLS=== */
 
 #skills-wrapper {
-    padding: 20px;
-    min-height: 600px;
+    margin: 0 20px 0 40px;
+    min-height: 480px;
     display: flex;
+    flex-wrap: wrap;
+    position: relative;
     .skill-wrapper {
-        position: relative;
+        position: absolute;
         .skill {
             display: flex;
             justify-content: center;
@@ -104,6 +129,15 @@
                 background-size: 620px;
                 background-position: -110px -50px;
             }
+            &.skill--small {
+                width: 60px;
+                height: 60px;
+                border-radius: 10px;
+                background: $light;
+                .skill--small__logo {
+                    padding: 10px;
+                }
+            }
         }
         .skill-logo {
             position: absolute;
@@ -119,7 +153,58 @@
     }
 
     #skill-php {
+        left: 10%;
+        top: 9%;
+    }
 
+    #skill-js {
+        right: 11%;
+        bottom: 41%;
+    }
+
+    #skill-dotnet {
+        bottom: 5%;
+        left: 25%;
+    }
+
+    #skill-laravel {
+        left: 43%;
+        top: 0;
+    }
+
+    #skill-symfony {
+        top: 13%;
+        right: 18%;
+    }
+
+    #skill-craftcms {
+        right: 42%;
+        top: 20%;
+    }
+
+    #skill-aws {
+        top: 50%;
+        left: 40%;
+    }
+
+    #skill-python {
+        top: 40%;
+        left: 16%;
+    }
+
+    #skill-vue {
+        bottom: 23%;
+        left: 3%;
+    }
+
+    #skill-solidity {
+        bottom: 5%;
+        right: 24%;
+    }
+
+    #skill-docker {
+        bottom: 22%;
+        right: 13%;
     }
 }
 
@@ -128,6 +213,6 @@
   #section-intro {
     min-height: 100vh;
     header {
-        margin-bottom: 100px;
+        margin-bottom: 115px;
     }
   }

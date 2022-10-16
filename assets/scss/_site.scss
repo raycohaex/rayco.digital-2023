@@ -4,7 +4,7 @@
 
 html, body {
     font-family: $mori;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,6 +16,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    @media only screen and (min-width: $xl) {
+        max-width: 1360px;
+    }
 }
 
 .site-logo {
