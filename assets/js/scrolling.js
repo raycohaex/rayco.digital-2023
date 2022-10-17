@@ -8,7 +8,10 @@ const isTouch = ('ontouchstart' in document.documentElement);
 
 // https://github.com/ashthornton/asscroll
 const asscroll = new ASScroll({
-  disableRaf: true });
+  disableRaf: true,
+  ease: 0.175,
+  touchEase: 0.175
+});
 
 
 gsap.ticker.add(asscroll.update);
@@ -32,11 +35,13 @@ ScrollTrigger.addEventListener("refresh", asscroll.resize);
 window.addEventListener("load", () => {
   const totalScroll = asscroll.containerElement.scrollHeight - innerHeight;
 
-  let sectionintro = document.getElementById('section-intro').getBoundingClientRect();
+  let sectionintro = document.getElementById('section-intro');
 
   var tl = gsap.timeline({
         scrollTrigger: {    
-            start: sectionintro.bottom - 200,
+            trigger: '.expanding-background',
+            start: (window.innerHeight/100*70)+" bottom",
+            end: "+="+(window.innerHeight-(window.innerHeight/100*70)),
             scrub: 1,
         },
         defaults: {
@@ -45,7 +50,6 @@ window.addEventListener("load", () => {
     })
     .to('.expanding-background', {
         width: window.innerWidth,
-        height: '100%',
         borderRadius: 0
     }, 0)
 

@@ -233,7 +233,7 @@
     .expanding-background {
         position: absolute;
         width: calc(1400px + 220px);
-        height: calc(100% - 120px);
+        height: calc(200vh - 120px);
         border-radius: 30px;
         background: $light;
     }
