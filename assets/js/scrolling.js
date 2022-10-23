@@ -41,11 +41,15 @@ window.addEventListener("load", () => {
     return window.innerWidth;
   }
 
+  const getHeight = () => {
+    return '100%';
+  }
+
     var tl = gsap.timeline({
       scrollTrigger: {    
         invalidateOnResize: true,
         invalidateOnRefresh: true,
-          trigger: '.expanding-background',
+          trigger: '#section-work',
           start: (window.innerHeight/100*70)+" bottom",
           end: "+="+(window.innerHeight-(window.innerHeight/100*70)),
           scrub: 1,
@@ -56,6 +60,7 @@ window.addEventListener("load", () => {
   })
   .to('.expanding-background', {
       width: getWidth,
+      height: getHeight,
       padding: 0,
       borderRadius: 0
   }, 0)

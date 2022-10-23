@@ -1,8 +1,8 @@
 ---
-title: "3 Years Craft"
+title: "Web 3"
 date: 2022-09-29T21:03:13+02:00
 type: blog
-slug: craft-education
+slug: web-3
 ---
 Bla bla bla
 

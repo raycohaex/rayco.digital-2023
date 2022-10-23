@@ -1,3 +1,6 @@
 <div class="container">
     <h1>test</h1>
+    {{ range where .Site.Pages "Section" "==" "works" }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
 </div>
