@@ -37,21 +37,30 @@ window.addEventListener("load", () => {
 
   let sectionintro = document.getElementById('section-intro');
 
-  var tl = gsap.timeline({
-        scrollTrigger: {    
-            trigger: '.expanding-background',
-            start: (window.innerHeight/100*70)+" bottom",
-            end: "+="+(window.innerHeight-(window.innerHeight/100*70)),
-            scrub: 1,
-        },
-        defaults: {
-        duration: 1
-        }
-    })
-    .to('.expanding-background', {
-        width: window.innerWidth,
-        borderRadius: 0
-    }, 0)
+  const getWidth = () => {
+    return window.innerWidth;
+  }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {    
+        invalidateOnResize: true,
+        invalidateOnRefresh: true,
+          trigger: '.expanding-background',
+          start: (window.innerHeight/100*70)+" bottom",
+          end: "+="+(window.innerHeight-(window.innerHeight/100*70)),
+          scrub: 1,
+      },
+      defaults: {
+      duration: 1
+      }
+  })
+  .to('.expanding-background', {
+      width: getWidth,
+      padding: 0,
+      borderRadius: 0
+  }, 0)
+
 
   asscroll.enable();
 });
+
