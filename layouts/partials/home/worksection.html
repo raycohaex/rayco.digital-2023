@@ -1,14 +1,13 @@
-<div class="container">
-    <h2>Work highlights</h2>
+<div class="container container--small">
+    <h2 class="text-center">Work highlights</h2>
     {{ range $i,$p := where .Site.Pages "Type" "work" }}
     <!-- if the loop iteration is odd add the grid--reverse class -->
-    <div class="grid grid__3-2 work-item {{ if not (modBool $i 2) }}grid--reverse{{ end }}">
-        <div class="work-item-image">
-            <a href="{{ .Permalink }}">
-                <img src="{{ .Params.image }}" alt="{{ .Title }}">
-            </a>
-        </div>
-        <div class="work-item-content">
+    <div class="grid grid__1-1 work-item {{ if not (modBool $i 2) }}grid--reverse{{ end }}">
+        <a href="{{ .Permalink }}" class="work-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            <div class="work-image-background"></div>
+        </a>
+        <div class="work-content">
             <h3>{{ .Title }}</h3>
             <p>{{ .Params.description }}</p>
             <a href="{{ .Permalink }}">Read more</a>

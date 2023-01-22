@@ -254,5 +254,14 @@
     margin: 120px 0;
     z-index: 5;
     color: $dark;
-    display: flex;
+    .work-item {
+        margin: 90px 0;
+        .work-image-background {
+            width: 100%;
+            width: 450px;
+            height: 550px;
+            background: $dark;
+            border-radius: 20px;
+        }
+    }
   }
