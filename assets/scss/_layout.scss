@@ -6,4 +6,8 @@
     &.grid__3-2 {
         grid-template-columns: 60% auto;
     }
+    &.grid--reverse {
+        direction: rtl;
+        grid-template-columns: auto 66.6%;
+    }
 }

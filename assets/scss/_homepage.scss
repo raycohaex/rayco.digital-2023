@@ -62,7 +62,7 @@
     margin-bottom: 80px;
 
     #intro-title {
-        font-size: 5.2em;
+        font-size: 6.2em;
         line-height: 1.1em;
     }
     
@@ -72,6 +72,7 @@
         margin-top: 36px;
         display: block;
         font-size: 14px;
+        max-width: 70ch;
     }
     
     #intro-buttons {
@@ -81,6 +82,8 @@
         }
     }
 }
+
+
 
 .grain {
     width: 100%;
@@ -245,9 +248,11 @@
     }
   }
 
-  .work-content {
+  #work-content {
     position: relative;
+    width: 100%;
     margin: 120px 0;
     z-index: 5;
-    color: #000000;
+    color: $dark;
+    display: flex;
   }

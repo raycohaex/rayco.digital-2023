@@ -1,2 +1,2 @@
-import './homogrpahictiles.js';
+import './holographictiles.js';
 import './magneticelements.js';

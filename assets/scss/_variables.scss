@@ -3,6 +3,14 @@ $white: #fff;
 $light: #F2F7FB;
 $dimmed: #C2C2C2;
 
+// define color variables as css variables
+:root {
+    --dark: #090808;
+    --white: #fff;
+    --light: #F2F7FB;
+    --dimmed: #C2C2C2;
+}
+
 $xl: 1400px;
 
 $mori: 'PP mori';
