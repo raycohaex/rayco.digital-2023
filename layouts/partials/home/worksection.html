@@ -8,9 +8,11 @@
             <div class="work-image-background"></div>
         </a>
         <div class="work-content">
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Params.description }}</p>
-            <a href="{{ .Permalink }}">Read more</a>
+            <div>
+                <h3 class="work-content__title">{{ .Title }}</h3>
+                <p>{{ .Params.introduction }}</p>
+                <a class="btn btn-dark" href="{{ .Permalink }}">Read more</a>
+            </div>
         </div>
     </div>
     {{ end }}

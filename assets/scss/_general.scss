@@ -16,6 +16,10 @@
 	cursor: pointer;
 	padding: 18px 22px 14px;
 	border-radius: 8px;
+	&.btn-dark {
+		background: $dark;
+		color: $light;
+	}
 	&.btn-white {
 		background: $light;
 		color: $dark;
@@ -33,13 +37,17 @@
 
 h1 {
 	font-size: 5em;
+	line-height: 1em;
 }
 h2 {
 	font-size: 3.5em;
+	line-height: 1em;
 }
 h3 {
 	font-size: 2.5em;
+	line-height: 1em;
 }
 h4 {
 	font-size: 2em;
+	line-height: 1em;
 }

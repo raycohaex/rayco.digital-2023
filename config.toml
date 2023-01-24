@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://storage.googleapis.com/rayco-website/'
 languageCode = 'en-us'
 title = 'Rayco Haex Fullstack Webdeveloper'
 assetDir = 'assets'

@@ -69,14 +69,13 @@
     #intro-description {
         color: #C2C2C2;
         line-height: 1.85em;
-        margin-top: 36px;
+        margin: 26px 0 20px;
         display: block;
         font-size: 14px;
         max-width: 70ch;
     }
     
     #intro-buttons {
-        margin-top: 15px;
         .btn:not(:first-child) {
             margin-left: 15px;
         }
@@ -248,7 +247,16 @@
     }
   }
 
-  #work-content {
+  #section-contact {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    align-items: center;
+  }
+
+  #work-section {
     position: relative;
     width: 100%;
     margin: 120px 0;
@@ -262,6 +270,20 @@
             height: 550px;
             background: $dark;
             border-radius: 20px;
+        }
+        .work-content {
+            padding: 0 60px;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            text-align: left;
+            .work-content__title {
+                font-size: 3em;
+                margin-bottom: 20px;
+            }
+            .btn {
+                margin-top: 20px;
+            }
         }
     }
   }

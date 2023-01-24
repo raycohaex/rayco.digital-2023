@@ -4,7 +4,8 @@
 
 html, body {
     font-family: $mori;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.15em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
     .nav {
+        font-size: 13px;
         a {
             all: unset;
             cursor: pointer;
@@ -79,4 +81,13 @@ h1, h2, h3, h4, h5, h6 {
 .section-wrapper {
     z-index: 2;
     position: relative;
+}
+
+.site-footer {
+    font-size: 10px;
+    background-color: rgba(#fff, 0.1);
+    color: rgba(#fff, 0.7);
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
 }
