@@ -6,8 +6,32 @@
     align-items: center;
 }
 
+.justify-end {
+	justify-content: flex-end;
+}
+
 .z-index-max {
 	z-index: 100;
+}
+
+.silent {
+	all: unset;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.tag {
+	padding: 8px 12px;
+	border-radius: 30px;
+	color: lighten($dark, 30%);
+	border: 1px solid lighten($dark, 30%);
+	display: inline-flex;
+	@include md {
+		font-size: 11px;
+		padding: 6px 10px;
+	}
 }
 
 .btn {
@@ -33,6 +57,23 @@
 
 .text-center {
 	text-align: center;
+}
+
+.container {
+    max-width: 1260px;
+	padding: 0 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: $xl) {
+        max-width: 1420px;
+    }
+	@include sm {
+		padding: 0 15px;
+	}
+    &.container--small {
+        max-width: 1000px;
+    }
 }
 
 h1 {

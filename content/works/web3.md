@@ -1,9 +1,12 @@
 ---
-title: "Web3 projects"
+title: "Web3"
 date: 2022-08-29T21:03:13+02:00
 type: work
+thumbnail: eth2.webp
+skills: ["Solidity", "Python", "DeFi", "Tokenomics"]
+
 slug: web-3
-introduction: "I delved into the (wild) world of web3 and gained experience in the areas of token economics and decentralized finance (DeFi). I have put my knowledge to practice by building projects related to this field and have gained a deep understanding of the technology and its use cases."
+introduction: "I delved into the world of DeFi by developing a variety of projects utilizing smart contracts and token economics."
 ---
 Bla bla bla
 

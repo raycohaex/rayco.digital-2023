@@ -12,4 +12,19 @@
     &.grid--reverse {
         direction: rtl;
     }
+    &.grid-xl-unset{
+        @include xl {
+            grid-template-columns: unset;
+        }
+    }
+    &.grid-lg-unset{
+        @include lg {
+            grid-template-columns: unset;
+        }
+    }
+    &.grid-md-unset{
+        @include md {
+            grid-template-columns: unset;
+        }
+    }
 }

@@ -29,51 +29,32 @@ ScrollTrigger.scrollerProxy(asscroll.containerElement, {
     return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
   } });
 
+  // let resizeTimeout;
+  // window.addEventListener("resize", () => {
+  //   clearTimeout(resizeTimeout);
+  //   resizeTimeout = setTimeout(() => {
+  //     window.location.reload();
+  //   }, 200);
+  // });
+
 
 asscroll.on("update", ScrollTrigger.update);
-ScrollTrigger.addEventListener("refresh", asscroll.resize);
+
+// fix gsap resize bug caused by asscroll
 
 window.addEventListener("load", () => {
   const totalScroll = asscroll.containerElement.scrollHeight - innerHeight;
 
   let sectionintro = document.getElementById('section-intro');
 
-  const getWidth = () => {
-    return window.innerWidth;
-  }
-
-  const getHeight = () => {
-    return '100%';
-  }
-
-  //   var tl = gsap.timeline({
-  //     scrollTrigger: {    
-  //       invalidateOnResize: true,
-  //       invalidateOnRefresh: true,
-  //         trigger: '#section-work',
-  //         start: "top bottom-=500",
-  //         end: "top top-=500",
-  //         scrub: 1,
-  //     },
-  //     defaults: {
-  //     duration: 1
-  //     }
-  // })
-  // .to('.expanding-background', {
-  //     width: getWidth,
-  //     height: getHeight,
-  //     padding: 0,
-  //     borderRadius: 0
-  // }, 0)
-
   // sort of like the above, make a div go from 85% width to 100% with and then back to 85% width
-  var tl = gsap.timeline({
+  // if width < 700px
+  if (window.innerWidth > 576) {
+  gsap.timeline({
     scrollTrigger: {
-      invalidateOnResize: true,
-      invalidateOnRefresh: true,
       trigger: '#section-work',
-      start: "top bottom-=500",
-      end: "bottom top-=300",
+      start: "top bottom",
+      end: "bottom top",
       scrub: 1,
     },
     defaults: {
@@ -81,29 +62,27 @@ window.addEventListener("load", () => {
     }
   })
   .to('.expanding-background', {
-    width: getWidth,
-    height: getHeight,
-    duration: 0.2,
+    width: "100%",
+    duration: 0.4,
   }, 0)
   .to('.expanding-background', {
-    width: '85%',
-    height: '100%',
-    duration: 0.25,
-  }, 0.85)
-
+    
+    width: "calc(100% - 200px)",
+    duration: 0.2
+  }, 1)
+}
+  
 
   const workitems = document.querySelectorAll('.work-item');
   const workitemcontainer = document.querySelector('.work-item-container');
 
   // work-item should be -200px from the top by default and scroll to 0 the more its center to the screen
   workitems.forEach( (e, i) => {
-    let tl = gsap.timeline({
+  gsap.timeline({
       scrollTrigger: {
-        invalidateOnResize: true,
-        invalidateOnRefresh: true,
         trigger: e,
         start: "top bottom",
-        end: "top bottom-=600",
+        end: "bottom top",
         scrub: 1,
       },
     })
@@ -115,6 +94,80 @@ window.addEventListener("load", () => {
       ease: "none"
     }, 0)
   });
+
+  const imgCraft = document.getElementById('img-craft-education');
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: imgCraft,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  })
+  .fromTo(imgCraft, {
+    y: 40,
+    scale: 0.90,
+    rotate: "-16deg",
+    ease: "none"
+  }, {
+    y: 0,
+    ease: 0,
+    scale: 1,
+    rotate: "0deg",
+  }, 0)
+
+  const imgMicroservice = document.getElementById('img-microservices');
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: imgMicroservice,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  })
+  .fromTo(imgMicroservice, {
+    y: 150,
+    scale: 0.96,
+    skew: "-8deg",
+    ease: "none"
+  }, {
+    y: 0,
+    ease: 0,
+    scale: 1,
+    skew: "0deg",
+    rotate: "0deg",
+  }, 0)
+
+  const imgWeb3 = document.getElementById('img-web-3');
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: imgWeb3,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  })
+  .fromTo(imgWeb3, {
+    y: -220,
+  }, {
+    y: 0,
+  }, 0)
+
+  const imgWeb3Special = document.getElementById('special-img-web3-toplayer');
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: imgWeb3Special,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  })
+  .fromTo(imgWeb3Special, {
+    y: -50,
+  }, {
+    y: 0,
+  }, 0)
+
   
 
   asscroll.enable();

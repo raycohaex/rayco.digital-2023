@@ -5,24 +5,11 @@
 html, body {
     font-family: $mori;
     font-size: 14px;
-    line-height: 1.15em;
+    line-height: 1.35em;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $radiogrotesk;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    @media only screen and (min-width: $xl) {
-        max-width: 1360px;
-    }
-    &.container--small {
-        max-width: 1000px;
-    }
 }
 
 .site-logo {

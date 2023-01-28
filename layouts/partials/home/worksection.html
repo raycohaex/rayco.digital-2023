@@ -1,17 +1,28 @@
+
 <div class="container container--small">
-    <h2 class="text-center">Work highlights</h2>
+    <h2 class="text-center">Work experience</h2>
     {{ range $i,$p := where .Site.Pages "Type" "work" }}
+    <!-- combine /img with .Params.img -->
+    {{ $holographic := resources.Get (printf "img/%s" .Params.thumbnail) }}
+    {{ $eth := resources.Get "img/eth.webp" }}
     <!-- if the loop iteration is odd add the grid--reverse class -->
-    <div class="grid grid__1-1 work-item {{ if not (modBool $i 2) }}grid--reverse{{ end }}">
+    <div class="grid grid__1-1 work-item grid-md-unset {{ if not (modBool $i 2) }}grid--reverse{{ end }}" id="item-{{.Params.slug}}">
+        {{ if (.Params.slug | eq "web-3") }}
+            <img src="{{$eth.Permalink}}" id="special-img-web3-toplayer">
+        {{ end }}
         <a href="{{ .Permalink }}" class="work-image">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            <img class="work-image__img" src="{{ $holographic.RelPermalink }}" alt="{{ .Title }}" id="img-{{ .Params.slug }}">
             <div class="work-image-background"></div>
         </a>
         <div class="work-content">
             <div>
-                <h3 class="work-content__title">{{ .Title }}</h3>
+                <a href="{{ .Permalink }}" class="silent pointer"><h3 class="work-content__title">{{ .Title }}</h3></a>
                 <p>{{ .Params.introduction }}</p>
-                <a class="btn btn-dark" href="{{ .Permalink }}">Read more</a>
+                <div class="flex work-skills {{ if not (modBool $i 2)}} justify-end {{end}}">
+                    {{ range .Params.skills }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                </div>
             </div>
         </div>
     </div>

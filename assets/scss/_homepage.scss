@@ -28,10 +28,11 @@
         position: absolute;
 
         &.purple {
-            @include gradient(rgb(242, 27, 56))
+            @include gradient(rgb(242, 27, 56));
+            filter: hue-rotate(350deg);
         }
         &.blue {
-            @include gradient(rgb(27, 145, 242))
+            @include gradient(rgb(27, 145, 242));
         }
     }
 
@@ -59,17 +60,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 
     #intro-title {
-        font-size: 6.2em;
-        line-height: 1.1em;
+        font-size: 6.5em;
+        line-height: 1.05em;
+        max-width: 16ch;
+        @include md {
+            font-size: 4em;
+        }
     }
     
     #intro-description {
         color: #C2C2C2;
-        line-height: 1.85em;
-        margin: 26px 0 20px;
+        line-height: 1.65em;
+        margin: 32px 0 40px;
         display: block;
         font-size: 14px;
         max-width: 70ch;
@@ -244,6 +249,9 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        @include md {
+            width: 100%;
+        }
     }
   }
 
@@ -264,25 +272,140 @@
     color: $dark;
     .work-item {
         margin: 90px 0;
+        @include lg {
+            margin: 60px 0;
+        }
+        @include sm {
+            margin: 20px 0;
+        }
+        .work-image {
+            position: relative;
+            width: 450px;
+            overflow: hidden;
+            border-radius: 20px;
+            @include lg {
+                width: 300px;
+                height: 300px;
+            }
+            @include md {
+                width: calc(100% - 80px);
+                margin: 0 40px 16px;
+            }
+            @include sm {
+                width: calc(100%);
+                margin: 0 0px 16px;
+            }
+            img {
+                position: absolute;
+                width: 550px;
+                height: 550px;
+                bottom: -50px;
+                right: -100px;
+                @include lg {
+                    width: 400px;
+                    height: 400px;
+                    right: 0;
+                }
+                
+            }
+        }
         .work-image-background {
             width: 100%;
             width: 450px;
-            height: 550px;
+            height: 450px;
+            @include lg {
+                width: 300px;
+                height: 300px;
+            }
+            @include md {
+                width: 100%;
+                padding: 0 20px;
+            }
             background: $dark;
             border-radius: 20px;
         }
         .work-content {
-            padding: 0 60px;
+            padding: 0 40px;
             display: flex;
             justify-self: center;
             align-items: center;
             text-align: left;
+            @include sm {
+                padding: 0;
+            }
+            .work-skills {
+                margin-top: 40px;
+                font-size: 12px;
+                flex-wrap: wrap;
+                column-gap: 6px;
+                @include md {
+                    margin-top: 20px;
+                }
+                > .tag {
+                    margin-bottom: 6px;
+                }
+            }
             .work-content__title {
                 font-size: 3em;
                 margin-bottom: 20px;
+                @include md {
+                    font-size: 2.2em;
+                }
             }
             .btn {
                 margin-top: 20px;
+            }
+        }
+
+        /* id overrides */
+        &#item-craft-education{
+            .work-image {
+                .work-image-background {
+                    background: #0c0b21;
+                }
+            }
+        }
+        &#item-microservices {
+            .work-image {
+                img {
+                    right: -30px;
+                    bottom: 0;
+                }
+                .work-image-background {
+                    background: #1d1728;
+                }
+            }
+        }
+        &#item-web-3 {
+            .work-image {
+                img {
+                    right: 30px;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include md {
+                        width: 350px;
+                        right: 150px;
+                    }
+                }
+                .work-image-background {
+                    background: #1d1728;
+                }
+            }
+            #special-img-web3-toplayer {
+                position: absolute;
+                width: 500px;
+                height: 500px;
+                z-index: 4;
+                left: 20px;
+                @include lg {
+                    width: 350px;
+                    height: 350px;
+                }
+                @include md {
+                    left: unset;
+                    right: -30px;
+                }
             }
         }
     }
