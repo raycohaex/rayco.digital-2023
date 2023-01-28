@@ -128,13 +128,11 @@ window.addEventListener("load", () => {
   .fromTo(imgMicroservice, {
     y: 150,
     scale: 0.96,
-    skew: "-8deg",
     ease: "none"
   }, {
     y: 0,
     ease: 0,
     scale: 1,
-    skew: "0deg",
     rotate: "0deg",
   }, 0)
 
