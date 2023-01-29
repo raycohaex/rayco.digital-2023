@@ -106,17 +106,31 @@
     }
 }
 
+::selection {
+	background: $dark;
+	color: $light;
+}
+
 h1 {
 	font-size: 5em;
 	line-height: 1em;
+	@include md {
+		font-size: 3.5em;
+	}
 }
 h2 {
 	font-size: 3.5em;
 	line-height: 1em;
+	@include md {
+		font-size: 2.6em;
+	}
 }
 h3 {
 	font-size: 2.5em;
 	line-height: 1em;
+	@include md {
+		font-size: 2em;
+	}
 }
 h4 {
 	font-size: 2em;

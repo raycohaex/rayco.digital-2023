@@ -18,24 +18,15 @@ window.addEventListener("load", () => {
         scrollTrigger: {
           trigger: '#section-work',
           start: "top bottom",
-          end: "bottom top",
+          end: "top top",
           scrub: 1,
-        },
-        defaults: {
-          duration: 1
         }
       })
       .to('.expanding-background', {
         width: "100%",
         height: "100%",
-        duration: 0.4,
+        duration: 0.3,
       }, 0)
-      .to('.expanding-background', {
-
-        width: "calc(100% - 200px)",
-        height: "calc(100% - 140px)",
-        duration: 0.2
-      }, 1)
   }
 
   const workitems = document.querySelectorAll('.work-item');

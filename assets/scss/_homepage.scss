@@ -73,7 +73,7 @@
             font-size: 4em;
         }
         @include sm {
-            font-size: 3em;
+            font-size: 3.3em;
         }
     }
     
@@ -283,8 +283,9 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-self: flex-end;
+    justify-content: center;
     align-items: center;
+
   }
 
   #work-section {
@@ -370,10 +371,10 @@
                 }
             }
             .work-content__title {
-                font-size: 3em;
+                font-size: 2.5em;
                 margin-bottom: 20px;
                 @include md {
-                    font-size: 2.2em;
+                    font-size: 1.8em;
                 }
             }
             .btn {
