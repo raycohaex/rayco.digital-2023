@@ -16,6 +16,6 @@
     
 {{ $homepage := resources.Get "js/app.js" | js.Build | resources.Minify | resources.Fingerprint }}
 {{ $js := slice $homepage | resources.Concat "js/bundle.js" }}
-<script src="{{$js.Permalink}}"></script>
+<script src="{{$js.Permalink}}?v=1"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 {{ define "main" }}
-    <main>
-        <div asscroll-container class="z-index-max">
+    <main class="relative">
+        <div class="z-index-max">
+            <div data-jump-container="menu" class="mobile-responsive-menu"></div>
             <div>
                 <section class="section-wrapper" id="section-intro">
                 <!-- header -->
@@ -21,23 +22,21 @@
                     </div>
                 </section>
 
-                <section class="section-wrapper" id="section-contact">
+                <section class="section-wrapper mobile-hidden" id="section-contact">
                     
                 </section>
 
-                <footer class="site-footer">
+                <footer class="site-footer" id="footer">
                     2023 portfolio - designed & developed by Rayco Haex
                 </footer>
-
-                <div class="gradients">
-                    <div class="gradient purple" id="gradient-1"></div>
-                    <div class="gradient purple" id="gradient-2"></div>
-                    <div class="gradient purple" id="gradient-3"></div>
-                    <div class="gradient blue" id="gradient-4"></div>
-                </div>
             </div>
         </div>
-
+        <div class="gradients">
+            <div class="gradient purple" id="gradient-1"></div>
+            <div class="gradient purple" id="gradient-2"></div>
+            <div class="gradient purple" id="gradient-3"></div>
+            <div class="gradient blue" id="gradient-4"></div>
+        </div>
         {{ $noise := resources.Get "img/noise.jpg" }}
         {{ $noise := $noise.Fit "600x400" }}
         <div class="grain" style="background-image:url('{{$noise.RelPermalink}}')"></div>

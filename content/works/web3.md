@@ -6,7 +6,7 @@ thumbnail: eth2.webp
 skills: ["Solidity", "Python", "DeFi", "Tokenomics"]
 
 slug: web-3
-introduction: "I delved into the world of DeFi by developing a variety of projects utilizing smart contracts and token economics."
+introduction: "I delved into the world of Web3 by developing a variety of projects utilizing smart contracts and token economics."
 ---
 Bla bla bla
 

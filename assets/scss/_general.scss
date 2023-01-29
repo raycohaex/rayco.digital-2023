@@ -10,6 +10,28 @@
 	justify-content: flex-end;
 }
 
+.justify-between {
+	justify-content: space-between;
+}
+
+.mobile-show {
+	display: none;
+	@include md {
+		display: initial;
+	}
+}
+
+.mobile-hidden {
+	display: initial;
+	@include md {
+		display: none !important;
+	}
+}
+
+.w-100 {
+	width: 100%;
+}
+
 .z-index-max {
 	z-index: 100;
 }
@@ -18,8 +40,16 @@
 	all: unset;
 }
 
+.relative {
+	position: relative;
+}
+
 .pointer {
 	cursor: pointer;
+}
+
+.block {
+	display: block;
 }
 
 .tag {

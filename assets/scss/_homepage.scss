@@ -61,13 +61,19 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 50px;
+    @include sm {
+        margin-bottom: 30px;
+    }
 
     #intro-title {
-        font-size: 6.5em;
+        font-size: 5.5em;
         line-height: 1.05em;
         max-width: 16ch;
         @include md {
             font-size: 4em;
+        }
+        @include sm {
+            font-size: 3em;
         }
     }
     
@@ -123,6 +129,10 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    @include md {
+        min-height: 300px;
+        margin: 0 0 20px 0;
+    }
     .skill-wrapper {
         position: absolute;
         .skill {
@@ -141,12 +151,22 @@
                 border-radius: 20px;
                 background-size: 620px;
                 background-position: -110px -50px;
+                @include md {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 10px;
+                }
             }
             &.skill--small {
-                width: 60px;
-                height: 60px;
+                width: 65px;
+                height: 65px;
                 border-radius: 10px;
                 background: $light;
+                @include md {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 8px;
+                }
                 .skill--small__logo {
                     padding: 10px;
                 }
@@ -273,13 +293,13 @@
     margin: 120px 0;
     z-index: 5;
     color: $dark;
+    @include sm {
+        margin: 90px 0 70px;
+    }
     .work-item {
-        margin: 90px 0;
-        @include lg {
-            margin: 60px 0;
-        }
+        margin: 65px 0;
         @include sm {
-            margin: 20px 0;
+            margin: 35px 0 20px;
         }
         .work-image {
             position: relative;
