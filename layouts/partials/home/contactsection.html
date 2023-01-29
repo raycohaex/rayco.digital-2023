@@ -1,0 +1,14 @@
+
+<div class="container container--small">
+    <h2 class="text-center">Let's get in touch</h2>
+    <!-- loop through the array -->
+    {{ range $i,$p := $items }}
+    <div class="grid grid__1-1 grid-md-unset">
+        <div class="work-content">
+            <div>
+                <a href="{{ $i }}" class="silent pointer"><h3 class="work-content__title">{{ $i }}</h3></a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
