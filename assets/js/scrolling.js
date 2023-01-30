@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
         },
       })
       .fromTo(e, {
-        y: 100,
+        y: 50,
         ease: "none"
       }, {
         y: 0,

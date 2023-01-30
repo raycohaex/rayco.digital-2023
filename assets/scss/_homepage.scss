@@ -207,7 +207,7 @@
         top: 0;
     }
 
-    #skill-symfony {
+    #skill-elastic {
         top: 13%;
         right: 18%;
     }
@@ -217,7 +217,7 @@
         top: 20%;
     }
 
-    #skill-aws {
+    #skill-azure {
         top: 50%;
         left: 40%;
     }
@@ -227,9 +227,12 @@
         left: 16%;
     }
 
-    #skill-vue {
+    #skill-next {
         bottom: 23%;
         left: 3%;
+        .skill {
+            padding: 8px;
+        }
     }
 
     #skill-solidity {
@@ -431,6 +434,12 @@
     flex-direction: column;
     width: 100%;
     margin: 60px 0 20px;
+    @include md {
+        padding: 0 40px;
+    }
+    @include sm {
+        padding: 0;
+    }
     .extra-work-item {
         display: grid;
         /* 8 grid columns */
@@ -462,7 +471,8 @@
             }
             span {
                 padding: 6px;
-                border: 1px solid rgba($dark, 0.5);
+                border: 1px solid rgba($dark, 0.8);
+                color: rgba($dark, 0.8);
                 border-radius: 40px;
                 /* never break words */
                 white-space: nowrap;

@@ -8,7 +8,7 @@
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
-<body {{ if $.IsNode }} class="homepage" {{ end }}>
+<body {{ if $.IsNode }} class="homepage" {{ else }} class="page" {{ end }}>
     {{ block "main" .}}
 
     {{ end }}
