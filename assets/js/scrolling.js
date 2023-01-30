@@ -127,6 +127,8 @@ window.addEventListener("load", () => {
     const siteMenu = document.querySelector('.mobile-responsive-menu');
 
     // when the footer is in view, move the sitemenu up a bit
+    // only do it when siteMenu contains child
+    if (window.innerWidth < 576) {
     gsap.timeline({
       scrollTrigger: {
         trigger: footer,
@@ -138,7 +140,8 @@ window.addEventListener("load", () => {
     .fromTo(siteMenu, {
       y: 0,
     }, {
-      y: -45,
+      y: -35,
     }, 0)
+  }
 
 });
