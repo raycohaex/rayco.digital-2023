@@ -160,10 +160,11 @@
                 }
             }
             &.skill--small {
-                width: 65px;
-                height: 65px;
+                width: 60px;
+                height: 60px;
                 border-radius: 10px;
-                background: $light;
+                background: rgba($light,0.08);
+                border: 1px solid rgba($light, 0.25);
                 @include md {
                     width: 45px;
                     height: 45px;
@@ -171,6 +172,8 @@
                 }
                 .skill--small__logo {
                     padding: 10px;
+                    fill: $light;
+                    color: $light;
                 }
             }
         }
@@ -230,9 +233,6 @@
     #skill-next {
         bottom: 23%;
         left: 3%;
-        .skill {
-            padding: 8px;
-        }
     }
 
     #skill-solidity {
