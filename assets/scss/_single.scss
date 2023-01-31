@@ -3,3 +3,58 @@
     color: $white;
     overflow-y: hidden;
 }
+
+.page-header {
+    padding-bottom: 60px;
+    .page-back-button {
+        border-radius: 10px;
+        background: rgba($light, 0.08);
+        border: 1px solid rgba($light, 0.4);
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        svg {
+            width: 25px;
+            height: 25px;
+            stroke: rgba($light, 0.85);
+        }
+    }
+    .page-title {
+        font-size: 4em;
+        max-width: 30ch;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.page-content {
+    background: $light;
+    color: $dark;
+    border-radius: 20px 20px 0 0;
+    padding: 90px 0;
+    @include md {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .page-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px;
+        padding: 20px;
+        @include md {
+            grid-gap: 12px;
+            padding: 12px;
+        }
+        .page-grid-number {
+            font-family: $radiogrotesk;
+            font-size: 1.7em;
+            grid-column: 1 / 2;
+        }
+        .page-grid-content {
+            grid-column: 2 / 5;
+        }
+        .page-grid-links {
+            grid-column: 6 / 7;
+        }
+    }
+}
