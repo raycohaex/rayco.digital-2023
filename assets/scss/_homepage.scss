@@ -306,7 +306,7 @@
     .work-item {
         margin: 65px 0;
         @include sm {
-            margin: 35px 0 20px;
+            margin: 45px 0 20px;
         }
         .work-image {
             position: relative;
@@ -495,6 +495,10 @@
                 height: 27px;
                 fill: rgba($dark, 0.85);
                 color: rgba($dark, 0.85);
+                @include sm {
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }
