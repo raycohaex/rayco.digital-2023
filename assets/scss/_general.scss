@@ -28,6 +28,45 @@
 	}
 }
 
+.text-small {
+	font-size: 11px;
+	opacity: 0.75;
+}
+
+.mt-1 {
+	margin-top: 1em;
+}
+
+code {
+	background: rgba($dark, 0.12);
+	padding: 2px 4px;
+	border-radius: 4px;
+	font-family: monospace;
+}
+
+pre {
+	padding: 0 20px;
+	background-color: #010510 !important;
+	white-space: pre-wrap;
+	word-break: break-all;
+	@include sm {
+		font-size: 11px;
+		tab-size: 2;
+	}
+	::selection {
+		background: rgba($light, 1);
+		color: $dark;
+	}
+}
+
+.mt-2 {
+	margin-top: 2em;
+}
+
+.text-center {
+	text-align: center;
+}
+
 .w-100 {
 	width: 100%;
 }

@@ -2,6 +2,14 @@
     background: $dark;
     color: $white;
     overflow-y: hidden;
+    @include md {
+        .site-top-menu {
+            margin-top: 0;
+            .site-logo {
+                margin: 0;
+            }
+        }
+    }
 }
 
 .page-header {
@@ -24,6 +32,9 @@
         max-width: 30ch;
         margin: 0 auto;
         text-align: center;
+        @include lg {
+            font-size: 2.5em;
+        }
     }
 }
 
@@ -34,27 +45,79 @@
     padding: 90px 0;
     @include md {
         border-radius: 12px 12px 0 0;
+        padding: 40px 0;
     }
 
     .page-grid {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         grid-gap: 20px;
         padding: 20px;
         @include md {
             grid-gap: 12px;
             padding: 12px;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
         }
         .page-grid-number {
             font-family: $radiogrotesk;
             font-size: 1.7em;
             grid-column: 1 / 2;
+            @include md {
+                display: none;
+            }
         }
         .page-grid-content {
-            grid-column: 2 / 5;
+            grid-column: 2 / 7;
+            @include lg {
+                grid-column: 2 / 8;
+            }
+            @include md {
+                grid-column: 1 / 9;
+                order: 2;
+            }
+            * {
+                max-width: 100%;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                margin: 1.2em 0 0.4em 0;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+            h2 {
+                font-size: 2.4em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            h4, h5, h6 {
+                font-size: 1em;
+            }
         }
         .page-grid-links {
-            grid-column: 6 / 7;
+            grid-column: 8 / 9;
+            @include md {
+                grid-column: 1 / 2;
+                order: 1;
+                margin-bottom: 16px;
+            }
+            .page-grid-link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: $dark;
+                margin-bottom: 10px;
+                svg {
+                    margin-right: 10px;
+                    width: 18px;
+                    height: 18px;
+                }
+            }
         }
     }
 }
