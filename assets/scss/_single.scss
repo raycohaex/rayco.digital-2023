@@ -48,7 +48,13 @@
         border-radius: 12px 12px 0 0;
         padding: 40px 0 0 0;
     }
-
+    a {
+        color: $purple;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     .page-grid {
         display: grid;
         grid-template-columns: repeat(8, 1fr);

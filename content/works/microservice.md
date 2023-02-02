@@ -1,5 +1,6 @@
 ---
 title: "Scaling microservices on Google Cloud Platform"
+description: "A high traffic social media platform built on microservices, using ASP.NET core, Redis, RabbitMQ and Kubernetes."
 date: 2022-09-29T21:03:13+02:00
 type: work
 thumbnail: microservice.webp
@@ -26,9 +27,9 @@ To solve this problem I chose Redis as a data store for the timelines and used a
 
 ### Social service
 This service is build up using a layered architecture. To store users and followers I used a graph database called Neo4j. I chose the graph datastructure because it easily allows to get closely related people, similar to LinkedIn showing 1de, 2de and 3de users. This service listened to the integration event from the auth service to create a new user. It also responds to the timeline service to get the followers of a user.
-\
-\
-The consumer for creating a user node after a user is created in the auth service looks like this:
+
+## Messaging with RabbitMQ
+Below you can see an example of how I used MassTransit to implement messaging.
 
 
 ```csharp
@@ -112,4 +113,4 @@ The microservices were managed using Kubernetes. The services were able to scale
 The frontend is made with Svelte and TailwindCSS. To consume the API I used Axios. The frontend is hosted on Google Cloud Storage and is served through a CDN. Rayco.digital is also hosted this way. It's a very cheap and especially fast way to serve static content.
 
 ## Conclusion
-I'm familiar with building large enterprise systems. Though it's not something I like doing fully on my own. Google Cloud is a great place to host such an architecture. However it would've worked just as well (or perhaps better) on Azure or AWS.
+I'm familiar with building large enterprise systems especially with a talanted team. Google Cloud is a great place to host such an architecture. However it would've worked just as well (or perhaps better) on Azure or AWS. There are still a lot of topics I could've looked into and I sure will in the future.

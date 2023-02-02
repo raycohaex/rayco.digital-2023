@@ -1,5 +1,5 @@
 <div class="contact-options">
-    <a href="{{.context.Site.Data.Links.Calendly}}" class="contact-option" target="_blank" rel="noreferrer">
+    <a href="{{.context.Site.Data.Links.Calendly}}" class="contact-option" target="_blank" rel="noreferrer" aria-label="Button to Rayco's Calendly">
         <div class="contact-option__button pulse-hover">
             <svg viewBox="0 0 338 345" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
                 <path d="M231.58,223.23C220.65,232.93 207,245 182.25,245L167.45,245C149.54,245 133.25,238.49 121.59,226.69C110.2,215.16 103.93,199.38 103.93,182.25L103.93,162C103.93,144.87 110.2,129.09 121.59,117.56C133.25,105.76 149.54,99.26 167.45,99.26L182.25,99.26C207.03,99.26 220.65,111.32 231.58,121.02C242.93,131.02 252.72,139.76 278.83,139.76C282.812,139.759 286.788,139.441 290.72,138.81L290.63,138.58C289.066,134.696 287.231,130.927 285.14,127.3L267.69,97.07C259.821,83.442 248.503,72.126 234.875,64.259C221.246,56.391 205.786,52.249 190.05,52.25L155.14,52.25C139.403,52.249 123.944,56.391 110.315,64.259C96.687,72.126 85.369,83.442 77.5,97.07L60.05,127.3C52.184,140.929 48.042,156.389 48.042,172.125C48.042,187.861 52.184,203.321 60.05,216.95L77.5,247.18C85.369,260.808 96.687,272.124 110.315,279.992C123.944,287.859 139.403,292.001 155.14,292L190.05,292C205.786,292.001 221.246,287.859 234.875,279.992C248.503,272.124 259.821,260.808 267.69,247.18L285.14,217C287.231,213.373 289.066,209.604 290.63,205.72L290.72,205.5C286.79,204.847 282.814,204.513 278.83,204.5C252.72,204.5 242.93,213.19 231.58,223.24" style="fill:#FFFFFF;fill-rule:nonzero;"/>
@@ -12,7 +12,7 @@
             <span>Plan meeting</span>
         {{ end }}
     </a>
-    <a href="{{.context.Site.Data.Links.Linkedin}}" class="contact-option" target="_blank" rel="noreferrer">
+    <a href="{{.context.Site.Data.Links.Linkedin}}" class="contact-option" target="_blank" rel="noreferrer" aria-label="Button to Rayco's LinkedIn">
         <div class="contact-option__button pulse-hover">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </div>
@@ -22,14 +22,14 @@
         {{ end }}
 
     </a>
-    <a href="mailto:{{.context.Site.Data.Links.Mail}}" class="contact-option" target="_blank" rel="noreferrer">
+    <a href="mailto:{{.context.Site.Data.Links.Mail}}" class="contact-option" target="_blank" rel="noreferrer" aria-label="Button to Rayco's Mail">
         <div class="contact-option__button pulse-hover">
             <svg id="contact-option-email" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
             </svg>
         </div>
         {{ if eq .lean false }}
-            <span>Email</span>
+            <span>{{.context.Site.Data.Links.Mail}}</span>
         {{ end }}
     </a>
 </div>

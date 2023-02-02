@@ -3,7 +3,7 @@
 }
 
 html, body {
-    font-family: $mori;
+    font-family: $rubik;
     font-size: 14px;
     overflow-x: hidden;
     line-height: 1.35em;
@@ -12,6 +12,12 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $radiogrotesk;
+    text-transform: capitalize;
+}
+
+.work-credit {
+    font-size: 10px;
+    color: rgba($dark, 0.5);
 }
 
 .site-logo {
