@@ -14,7 +14,7 @@ During my semester of enterprise software engineering I chose to build a social 
 
 ## Architecture
 Below is a basic overview of the architecture I built. Each service is composed using ASP.NET Core 6 webapi following either a CQRS based architecture or a layered one (depending on complexity of the service). For messaging I chose to use RabbitMQ because it fit the usecase well based on the fact that it wasn't sure where the architecture would end up and there was no non-functional requirement that would need streaming. Each service uses the MassTransit library to interact with RabbitMQ. I mostly used topic exchanges.
-![Architecture](/rayco-website/microservice-architecture.jpg "Basic overview of the architecture")
+![Architecture](/microservice-architecture.jpg "Basic overview of the architecture")
 
 ### Post service
 This service is build up using Command Query Responsibility Segregation (CQRS). MediatR is used to handle the commands and queries. The service is responsible for creating and deleting posts. It also has a query endpoint that returns a post by id. The database used for this service is MySQL. I also made a different Event Sourcing implementation where I used a read and write database. The read database being MySQL which contained the latest posts and the write database being MongoDB where it stored all the posts as events. This allowed me to have the ability to play back events thus creating eventual consistency.
@@ -111,6 +111,3 @@ The microservices were managed using Kubernetes. The services were able to scale
 
 ## Frontend
 The frontend is made with Svelte and TailwindCSS. To consume the API I used Axios. The frontend is hosted on Google Cloud Storage and is served through a CDN. Rayco.digital is also hosted this way. It's a very cheap and especially fast way to serve static content.
-
-## Conclusion
-I'm familiar with building large enterprise systems especially with a talanted team. Google Cloud is a great place to host such an architecture. However it would've worked just as well (or perhaps better) on Azure or AWS. There are still a lot of topics I could've looked into and I sure will in the future.

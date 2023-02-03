@@ -69,7 +69,7 @@
     #intro-title {
         font-size: 6em;
         line-height: 1.05em;
-        max-width: 18ch;
+        max-width: 16ch;
         @include md {
             font-size: 4.5em;
         }
@@ -166,6 +166,10 @@
                 border-radius: 10px;
                 background: rgba($light,0.08);
                 border: 1px solid rgba($light, 0.25);
+                transition: 240ms;
+                display: flex;
+                position: relative;
+                justify-content: center;
                 @include md {
                     width: 45px;
                     height: 45px;
@@ -173,8 +177,29 @@
                 }
                 .skill--small__logo {
                     padding: 10px;
+                    transition: 240ms;
                     fill: $light;
                     color: $light;
+                }
+                .skill--small__name {
+                    font-size: 12px;
+                    position: absolute;
+                    bottom: 8px;
+                    opacity: 0;
+                    transition: 200ms;
+                }
+                &:hover {
+                    width: 80px;
+                    height: 80px;
+                    .skill--small__logo {
+                        width: 26px;
+                        height: 26px;
+                        margin-bottom: 20px;
+                        padding: 0;
+                    }
+                    .skill--small__name {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -336,7 +361,15 @@
                     height: 400px;
                     right: 0;
                 }
-                
+                &#img-craft-education {
+                    width: 500px;
+                    height: 500px;
+                    right: -80px;
+                    @include lg {
+                        width: 350px;
+                        height: 350px;
+                    }
+                }
             }
         }
         .work-image-background {
