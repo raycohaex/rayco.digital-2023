@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "rayco.digital '23",
-            "tools": ["Hugo", "Google Cloud"],
+            "tools": ["Hugo"],
             "github": "https://github.com/raycohaex/rayco.digital-2022",
             "live": "https://rayco.digital"
         },

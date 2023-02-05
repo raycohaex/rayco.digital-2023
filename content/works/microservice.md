@@ -110,4 +110,4 @@ For this educational project, the cluster used spot instances on many nodes to k
 The microservices were managed using Kubernetes. The services were able to scale both horizontally and vertically successfully, according to the load test performed using Locust. While keeping costs down, a highly available, scalable solution was made possible through the usage of GKE. These technologies offered a solid management foundation for the microservices, ensuring top performance.
 
 ## Frontend
-The frontend is made with Svelte and TailwindCSS. To consume the API I used Axios. The frontend is hosted on Google Cloud Storage and is served through a CDN. Rayco.digital is also hosted this way. It's a very cheap and especially fast way to serve static content.
+The frontend is made with Svelte and TailwindCSS. To consume the API I used Axios. The frontend is hosted on Google Cloud Storage and is served through a CDN and loadbalancer.
