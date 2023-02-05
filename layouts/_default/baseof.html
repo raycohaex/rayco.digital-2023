@@ -13,6 +13,13 @@
     <link rel="manifest" href="/fav/site.webmanifest">
     <link rel="mask-icon" href="/fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#080809">
+    <meta property="og:title" content="Rayco Haex | {{ .Page.Title }}">
+    <meta property="og:site_name" content="rayco.digital">
+    <meta property="og:url" content="rayco.digital">
+    {{ $description := .Page.Description }}{{ if .Description }}<meta property="og:description" content="{{ .Description }}">{{ end }}
+    <meta property="og:type" content="website">
+    {{ $og := resources.Get "img/og.jpg" | resources.Fingerprint }}
+    <meta property="og:image" content="{{ $og.Permalink }}">
     <title>Rayco Haex | {{ .Page.Title }}</title>
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
