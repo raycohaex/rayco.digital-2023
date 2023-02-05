@@ -17,8 +17,8 @@
             border-radius: 12px;
             display: flex;
             justify-content: center;
-            background: rgba(lighten($dark, 8%), 0.5);
-            border: 1px solid rgba($light, 0.16);
+            background: rgba($light,0.08);
+            border: 1px solid rgba($light, 0.25);
             margin: 0 auto;
             svg:not(#contact-option-email) {
                 fill: #fff;
