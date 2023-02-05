@@ -70,6 +70,9 @@
         font-size: 6em;
         line-height: 1.05em;
         max-width: 16ch;
+        @include rwd(1400px) {
+            font-size: 5em;
+        }
         @include md {
             font-size: 4.5em;
         }
@@ -132,6 +135,9 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    @include rwd(1400px) {
+        min-height: 440px;
+    }
     @include md {
         min-height: 300px;
         margin: 0 0 20px 0;

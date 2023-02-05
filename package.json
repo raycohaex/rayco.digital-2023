@@ -1,0 +1,23 @@
+{
+  "name": "rayco.digital",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raycohaex/rayco.digital-2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raycohaex/rayco.digital-2022/issues"
+  },
+  "homepage": "https://github.com/raycohaex/rayco.digital-2022#readme",
+  "dependencies": {
+    "gsap": "^3.11.4",
+    "magnet-mouse": "github:fluffy-factory/magnet-mouse"
+  }
+}
