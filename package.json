@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/raycohaex/rayco.digital-2022#readme",
   "dependencies": {
+    "@barba/core": "^2.9.7",
     "gsap": "^3.11.4",
     "magnet-mouse": "github:fluffy-factory/magnet-mouse"
   }

@@ -24,8 +24,14 @@
     <title>Rayco Haex | {{ .Page.Title }}</title>
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MVK5XFVQZ2', { 'anonymize_ip': true });
+    </script>
 </head>
-<body {{ if $.IsNode }} class="homepage" {{ else }} class="page" {{ end }}>
+<body {{ if $.IsNode }} class="homepage" {{ else }} class="page" {{ end }} data-barba="wrapper">
     {{ block "main" .}}
 
     {{ end }}
