@@ -16,7 +16,8 @@
     <meta property="og:title" content="Rayco Haex | {{ .Page.Title }}">
     <meta property="og:site_name" content="rayco.digital">
     <meta property="og:url" content="rayco.digital">
-    {{ $description := .Page.Description }}{{ if .Description }}<meta property="og:description" content="{{ .Description }}">{{ end }}
+    {{ $description := .Page.Description }}{{ if .Description }}<meta property="og:description" content="{{ .Description }}">
+    <meta property="og:description" content="{{ .Site.Data.Homepage.Description }}">{{ end }}
     <meta property="og:type" content="website">
     {{ $og := resources.Get "img/og.jpg" | resources.Fingerprint }}
     <meta property="og:image" content="{{ $og.Permalink }}">
