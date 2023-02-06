@@ -25,6 +25,10 @@ export default holographictiles = () => {
             tiltLR = (tiltLR / 90) * 20;
             tiltFB = (tiltFB / 90) * 5;
 
+            // reduce the titl values to 1/5th
+            tiltLR = tiltLR / 12;
+            tiltFB = tiltFB / 12;
+
 
             console.log(tiltLR);
             console.log(tiltFB);
