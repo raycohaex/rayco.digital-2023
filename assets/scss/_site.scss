@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
             border: 1px solid rgba($light, 0.14);
             backdrop-filter: blur(16px);
             padding: 10px 12px;
+            display: flex !important;
             align-items: center;
             flex-direction: column;
             .site-logo {
@@ -165,6 +166,9 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include md {
+        display: none;
+    }
     a {
         text-decoration: none;
         color: $light;
