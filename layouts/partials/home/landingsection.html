@@ -26,7 +26,15 @@
         </p>
         <div id="intro-buttons" class="mobile-hidden">
             <a class="btn btn-white" href="#section-work">My work</a>
-            <a class="btn btn-glass" href="#">Resume</a>
+            {{ $resume := resources.Get "files/resume.pdf" }}
+            <a href="{{ $resume.Permalink }}" target="_blank" rel="noreferrer" aria-label="Download Rayco's Resume" class="btn btn-flex">
+                <span>Download resume</span>
+                <div class="btnicon btnicon-glass btnicon-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </a>
         </div>
     </div>
 

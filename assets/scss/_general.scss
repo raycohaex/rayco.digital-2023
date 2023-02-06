@@ -154,6 +154,27 @@ pre {
 		color: $light;
 		border: 1px solid rgba($light, 0.20);
 	}
+	&.btn-flex {
+		display: inline-flex;
+		align-items: center;
+	}
+}
+
+.btnicon {
+	padding: 6px;
+    display: flex;
+    border-radius: 20px;
+	transition: 150ms;
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+	&.btnicon-glass {
+		background: rgba($light,0.15);
+	}
+	&.btnicon-right {
+		margin-left: 10px;
+	}
 }
 
 .text-center {
