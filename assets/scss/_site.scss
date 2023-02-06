@@ -160,15 +160,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.homepage .site-top-menu {
+    @include md {
+        display: none;
+    }
+}
+
 .site-top-menu {
     padding: 30px 0;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include md {
-        display: none;
-    }
     a {
         text-decoration: none;
         color: $light;
