@@ -7,12 +7,31 @@ export default holographictiles = () => {
 
     let enableCall = true;
     mousetrigger.addEventListener('mousemove', (event) => {
-    if (!enableCall) return;
+        if (!enableCall) return;
 
-    enableCall = false;
-    handleMouseMove(event);
-    setTimeout(() => enableCall = true, THROTTLE_MIN);
+        enableCall = false;
+        handleMouseMove(event);
+        setTimeout(() => enableCall = true, THROTTLE_MIN);
     });
+
+    // if mobile device then use deviceorientation
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function(event) {
+            // get the tilt values
+            let tiltLR = event.gamma;
+            let tiltFB = event.beta;
+
+            // make it so a -20 degree tilt is -20px and a 360 degree tilt is also -20px, a 180 degree tilt is 20px
+            tiltLR = (tiltLR / 90) * 20;
+            tiltFB = (tiltFB / 90) * 5;
+
+
+            console.log(tiltLR);
+            console.log(tiltFB);
+
+            updateHolographicBackground(tiltLR, tiltFB);
+        }); 
+    };
 
     updateHolographicBackground = (valueX, valueY) => {
         holographicElements.forEach( e => {
