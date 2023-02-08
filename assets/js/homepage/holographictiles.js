@@ -29,10 +29,6 @@ export default holographictiles = () => {
             tiltLR = tiltLR / 12;
             tiltFB = tiltFB / 12;
 
-
-            console.log(tiltLR);
-            console.log(tiltFB);
-
             updateHolographicBackground(tiltLR, tiltFB);
         }); 
     };
