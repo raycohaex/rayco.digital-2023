@@ -24,6 +24,12 @@ Following the non-functional requirements, I wanted to build a timeline that wou
 \
 \
 To solve this problem I chose Redis as a data store for the timelines and used an event driven architecture to build up the timelines. A `KweetPostedEvent` is consumed by the timeline service through RabbitMQ. The timeline service then sends out a request-response to the social service also through RabbitMQ, this is fine because the operation will not affect any get requests to the timeline.
+\
+\
+The timeline service now has the post and a list of people who should receive it. It will update the timeline of each user in a O(n) operation. This is not ideal and could be replaced by a more efficient datastructure like a double linked list. The maximum amount of posts per user is 20.
+\
+\
+There is one issue left which is users with a huge following creating a new post. I'm aware of the issue but did not solve it because there was no obvious solution at that moment. Though if you're reading this and have a suggestion, please let me know 😉 hi@rayco.digital
 
 ### Social service
 This service is build up using a layered architecture. To store users and followers I used a graph database called Neo4j. I chose the graph datastructure because it easily allows to get closely related people, similar to LinkedIn showing 1de, 2de and 3de users. This service listened to the integration event from the auth service to create a new user. It also responds to the timeline service to get the followers of a user.
