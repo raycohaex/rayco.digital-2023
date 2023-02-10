@@ -16,6 +16,12 @@ During my semester of enterprise software engineering I chose to build a social 
 Below is a basic overview of the architecture I built. Each service is composed using ASP.NET Core 6 webapi following either a CQRS based architecture or a layered one (depending on complexity of the service). For messaging I chose to use RabbitMQ because it fit the usecase well based on the fact that it wasn't sure where the architecture would end up and there was no non-functional requirement that would need streaming. Each service uses the MassTransit library to interact with RabbitMQ. I mostly used topic exchanges.
 ![Architecture](/microservice-architecture.jpg "Basic overview of the architecture")
 
+### DevOps
+For DevOps I used CircleCI, largely due to their free credits. Though it requires an educated guess for how long this will remain free due to crypto miners using CI/CD credits ([source](https://dev.to/n3wt0n/crypto-mining-is-killing-all-free-ci-cd-platforms-4chc)).
+The CI/CD pipeline would listen to specific folders in the project changing instead of building everything. This is because I used a monorepo as it was still a relatively small microservice and it made it easier for me to stick to DRY as much as possible.
+
+The pipeline ran tests and did QA using self-hosted sonarqube. Though the pipeline did not automatically update the pods, it did build a working image in the registry. This allowed me to update the pods manually when I wanted to.
+
 ### Post service
 This service is build up using Command Query Responsibility Segregation (CQRS). MediatR is used to handle the commands and queries. The service is responsible for creating and deleting posts. It also has a query endpoint that returns a post by id. The database used for this service is MySQL. I also made a different Event Sourcing implementation where I used a read and write database. The read database being MySQL which contained the latest posts and the write database being MongoDB where it stored all the posts as events. This allowed me to have the ability to play back events thus creating eventual consistency.
 
@@ -26,7 +32,7 @@ Following the non-functional requirements, I wanted to build a timeline that wou
 To solve this problem I chose Redis as a data store for the timelines and used an event driven architecture to build up the timelines. A `KweetPostedEvent` is consumed by the timeline service through RabbitMQ. The timeline service then sends out a request-response to the social service also through RabbitMQ, this is fine because the operation will not affect any get requests to the timeline.
 \
 \
-The timeline service now has the post and a list of people who should receive it. It will update the timeline of each user in a O(n) operation. This is not ideal and could be replaced by a more efficient datastructure like a double linked list. The maximum amount of posts per user is 20.
+The timeline service now has the post and a list of people who should receive it. It will update the timeline of each user, which is a list, in a O(n) operation. This is not ideal and could be replaced by a more efficient datastructure like a double linked list. The maximum amount of posts per user is 20.
 \
 \
 There is one issue left which is users with a huge following creating a new post. I'm aware of the issue but did not solve it because there was no obvious solution at that moment. Though if you're reading this and have a suggestion, please let me know 😉 hi@rayco.digital
