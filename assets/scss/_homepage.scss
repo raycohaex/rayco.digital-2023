@@ -62,6 +62,10 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 50px;
+    @include lg {
+        width: auto;
+        margin: 0 auto 70px;
+    }
     @include sm {
         margin-bottom: 30px;
     }
@@ -138,7 +142,16 @@
     @include rwd(1400px) {
         min-height: 440px;
     }
+    @include xl {
+        height: 340px;
+        min-height: unset;
+    }
+    @include lg {
+        width: 600px;
+        margin: 0 auto 50px;
+    }
     @include md {
+        width: unset;
         min-height: 300px;
         margin: 0 0 20px 0;
     }
@@ -160,7 +173,7 @@
                 border-radius: 20px;
                 background-size: 620px;
                 background-position: -110px -50px;
-                @include md {
+                @include xl {
                     width: 70px;
                     height: 70px;
                     border-radius: 10px;
@@ -176,7 +189,7 @@
                 display: flex;
                 position: relative;
                 justify-content: center;
-                @include md {
+                @include xl {
                     width: 45px;
                     height: 45px;
                     border-radius: 8px;
@@ -481,62 +494,62 @@
         padding: 0;
     }
     .extra-work-item {
-        display: grid;
-        /* 8 grid columns */
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 20px;
+        display: flex;
         margin: 20px 0;
         border-bottom: 1px solid $dark;
         align-items: center;
-        padding-right: 10px;
+        padding: 6px 10px 6px 12px;
         @include md {
             display: flex;
             justify-content: space-between;
         }
-        .extra-work-item__title {
-            font-size: 1.2em;
-            @include sm {
-                font-size: 0.9em;
-            }
-            /* 2 grid colspan 8*/
-            grid-column: 1 / span 2;
+        @include sm {
+            padding: 6px 0 6px 0;
         }
-        .extra-work-item__tools {
-            font-size: 12px;
-            grid-column: 3 / span 2;
-            flex-wrap: wrap;
-            @include sm {
-                font-size: 10px;
-            }
-            span {
-                padding: 6px;
-                border: 1px solid rgba($dark, 0.8);
-                color: rgba($dark, 0.8);
-                border-radius: 40px;
-                /* never break words */
-                white-space: nowrap;
+        .extra-work-item-content {
+            display: flex;
+            width: 100%;
+            .extra-work-item-content__title {
+                font-size: 1.2em;
+                width: 20ch;
                 @include sm {
-                    padding: 4px;
+                    font-size: 0.9em;
+                }
+                /* 2 grid colspan 8*/
+            }
+            .extra-work-item-content__tools {
+                font-size: 12px;
+                flex-wrap: wrap;
+                @include sm {
+                    font-size: 10px;
+                }
+                span {
+                    padding: 6px;
+                    color: rgba($dark, 0.62);
+                    border-radius: 40px;
+                    /* never break words */
+                    white-space: nowrap;
+                    @include sm {
+                        padding: 4px;
+                    }
                 }
             }
         }
         .extra-work-item__github {
-            grid-column: 7 / span 1;
+            margin-right: 12px;
         }
         .extra-work-item__link {
-            grid-column: 8 / span 1;
         }
         .extra-work-item__github, .extra-work-item__link {
             text-align: right;
             svg {
-                width: 27px;
-                height: 27px;
+                width: 22px;
+                height: 22px;
                 fill: rgba($dark, 0.85);
                 color: rgba($dark, 0.85);
                 @include sm {
-                    width: 20px;
-                    height: 20px;
+                    width: 18px;
+                    height: 18px;
                 }
             }
         }

@@ -1,5 +1,5 @@
 ---
-title: "2 Years of PHP at CRAFT-Education"
+title: "PHP at CRAFT-Education"
 date: 2022-09-29T21:03:13+02:00
 type: work
 thumbnail: craft-blue.webp

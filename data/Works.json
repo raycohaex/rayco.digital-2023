@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "rayco.digital '23",
-            "tools": ["Hugo"],
+            "tools": ["Hugo", "GSAP"],
             "github": "https://github.com/raycohaex/rayco.digital-2023",
             "live": "https://rayco.digital"
         },
