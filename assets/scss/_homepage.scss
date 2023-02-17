@@ -135,16 +135,15 @@
 
 #skills-wrapper {
     margin: 0 20px 0 40px;
-    min-height: 480px;
+    height: 480px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     @include rwd(1400px) {
-        min-height: 440px;
+        height: 440px;
     }
     @include xl {
         height: 340px;
-        min-height: unset;
     }
     @include lg {
         width: 600px;
@@ -152,7 +151,7 @@
     }
     @include md {
         width: unset;
-        min-height: 300px;
+        height: 300px;
         margin: 0 0 20px 0;
     }
     .skill-wrapper {
