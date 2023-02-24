@@ -19,7 +19,7 @@
     {{ $description := .Page.Description }}{{ if .Description }}<meta property="og:description" content="{{ .Description }}">{{ else }}
     <meta property="og:description" content="{{ .Site.Data.Homepage.Description }}">{{ end }}
     <meta property="og:type" content="website">
-    {{ $og := resources.Get "img/og.jpg" | resources.Fingerprint }}
+    {{ $og := resources.Get "img/og.jpg" }}
     <meta property="og:image" content="{{ $og.Permalink }}?v={{ now.Unix }}">
     <title>Rayco Haex | {{ .Page.Title }}</title>
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
