@@ -1,9 +1,9 @@
 {
     "projects": [
         {
-            "name": "Airbnb clone",
+            "name": "Booking platform demo",
             "tools": ["Laravel", "Inertia.js", "Vue", "TailwindCSS"],
-            "github": "https://github.com/raycohaex/accomodation-booking"
+            "github": "https://github.com/raycohaex/laravel-intertia-vue-booking-platform"
         },
         {
             "name": "rayco.digital '23",
