@@ -6,11 +6,6 @@
             "github": "https://github.com/raycohaex/laravel-intertia-vue-booking-platform"
         },
         {
-            "name": "blx.gg",
-            "tools": ["Laravel"],
-            "live": "https://blx.gg"
-        },
-        {
             "name": "rayco.digital '23",
             "tools": ["Hugo", "GSAP"],
             "github": "https://github.com/raycohaex/rayco.digital-2023",
